@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title_block %}
+{{blog.blog_title}}
+{% endblock title_block %}
+
+
+{% block body_block %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h2>{{blog.blog_title}}</h2>
+            <h4>Posted By: @{{blog.author}}</h4>
+            <i>
+                <h6>Published On: {{blog.publish_date}}</h6>
+            </i>
+            <i>
+                <h6>Updated On: {{blog.update_view}}</h6>
+            </i>
+        </div>
+        <div class="col-sm">
+            <img src="/media/{{blog.blog_image}}" width="100%" class="img-fluid">
+        </div>
+        <p>
+            {{blog.blog_content|linebreaks}}
+        </p>
+        <hr>
+
+    </div>
+
+
+</div>
+{% endblock body_block %}
